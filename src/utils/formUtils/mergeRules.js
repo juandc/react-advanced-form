@@ -15,6 +15,6 @@ export default function mergeRules(validationSchema, contextRules = {}) {
   const closestRules = validationSchema || contextRules
 
   return closestRules.extend
-    ? R.mergeDeepRight(closestRules, contextRules)
+    ? R.mergeDeepLeft(contextRules, closestRules)
     : closestRules
 }
